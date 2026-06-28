@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix apps/api-gateway\" \"npm run dev --prefix apps/frontend\"",
     "install-all": "npm install && npm install --prefix apps/api-gateway && npm install --prefix apps/frontend",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build --prefix apps/frontend",
     "start": "npm run start --prefix apps/api-gateway"
   },
