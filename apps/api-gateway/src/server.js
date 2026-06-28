@@ -209,7 +209,7 @@ const startServer = async () => {
   });
 
   server.listen(PORT, () => {
-    console.log(`🚀 SIEM API Gateway running on http://localhost:${PORT}`);
+    console.log(`🚀 SIEM API Gateway running on https://siem-td7e.onrender.com:${PORT}`);
     console.log(`📡 Real-time WebSocket server ready on /ws`);
   });
 };
