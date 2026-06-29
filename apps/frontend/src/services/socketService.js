@@ -7,7 +7,7 @@ class SocketService {
 
   connect() {
     if (!this.socket) {
-      const socketUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+      const socketUrl = (import.meta.env.VITE_API_BASE_URL || 'https://siem-backend-4io0.onrender.com').replace(/\/$/, '');
       this.socket = io(socketUrl, {
         path: '/ws',
         transports: ['websocket'],
