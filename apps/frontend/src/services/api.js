@@ -6,8 +6,7 @@ const api = axios.create({
   baseURL: `${apiBaseUrl}/api/v1`,
   headers: {
     'Content-Type': 'application/json'
-  },
-  withCredentials: true
+  }
 });
 
 // Add request interceptor to append JWT token
