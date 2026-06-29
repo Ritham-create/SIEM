@@ -12,6 +12,7 @@ import LogExplorer from './pages/LogExplorer/LogExplorer';
 import Alerts from './pages/Alerts/Alerts';
 import Cases from './pages/Cases/Cases';
 import Rules from './pages/Rules/Rules';
+import Intel from './pages/Intel/intel';
 import Users from './pages/Users/Users';
 
 // Shield Protected Route component
