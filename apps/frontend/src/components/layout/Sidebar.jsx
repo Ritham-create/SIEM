@@ -21,7 +21,8 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
     { path: '/alerts', icon: AlertTriangle, label: 'Alerts' },
     { path: '/search', icon: Search, label: 'Search Logs' },
     { path: '/cases', icon: FileText, label: 'Cases' },
-    { path: '/rules', icon: Shield, label: 'Correlation Rules' }
+    { path: '/rules', icon: Shield, label: 'Correlation Rules' },
+    { path: '/intel', icon: Vector, label: 'Threat Intel' }
   ];
 
   // Append Users management to sidebar for Admin only
