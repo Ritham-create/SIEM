@@ -53,7 +53,7 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           {isRegisterMode && (
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#888888] mb-1.5 font-mono">Username</label>
+              <label className="block text-xs font-semibold uppercase tracking-wider text-[#666666] mb-1.5 font-mono">Username</label>
               <div className="relative">
                 <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-[#555]">
                   <User size={16} />
@@ -71,7 +71,7 @@ const Login = () => {
           )}
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-[#888888] mb-1.5 font-mono">Email Address</label>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-[#666666] mb-1.5 font-mono">Email Address</label>
             <div className="relative">
               <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-[#555]">
                 <Mail size={16} />
@@ -88,7 +88,7 @@ const Login = () => {
           </div>
           
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-[#888888] mb-1.5 font-mono">Password</label>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-[#666666] mb-1.5 font-mono">Password</label>
             <div className="relative">
               <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-[#555]">
                 <KeyRound size={16} />
@@ -106,11 +106,11 @@ const Login = () => {
 
           {isRegisterMode && (
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-[#888888] mb-1.5 font-mono">Access Role (Sandbox Option)</label>
+              <label className="block text-xs font-semibold uppercase tracking-wider text-[#666666] mb-1.5 font-mono">Access Role (Sandbox Option)</label>
               <select
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
-                className="input-field w-full bg-[#1a1a1a]"
+                className="input-field w-full bg-[#f5f5f5]"
               >
                 <option value="Viewer">Viewer (Read-Only)</option>
                 <option value="Analyst">Analyst (Manage Incidents)</option>

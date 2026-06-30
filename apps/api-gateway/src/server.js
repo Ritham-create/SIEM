@@ -1,5 +1,8 @@
 import express from 'express';
 import http from 'http';
+import path from 'path';
+import { existsSync } from 'fs';
+import { fileURLToPath } from 'url';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -26,11 +29,22 @@ import Rule from './models/Rule.js';
 
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const frontendDistPath = path.resolve(__dirname, '../../frontend/dist');
+const frontendIndexPath = path.join(frontendDistPath, 'index.html');
+
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'http://localhost:3000',
+  'http://127.0.0.1:3000'
+].filter(Boolean);
+
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
+    origin: allowedOrigins,
     credentials: true
   },
   path: '/ws'
@@ -44,7 +58,7 @@ app.use(helmet({
   crossOriginEmbedderPolicy: false
 }));
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
+  origin: allowedOrigins,
   credentials: true
 }));
 app.use(compression());
@@ -67,6 +81,13 @@ app.use('/api/v1/logs', logRoutes);
 app.use('/api/v1/alerts', alertRoutes);
 app.use('/api/v1/rules', ruleRoutes);
 app.use('/api/v1/cases', caseRoutes);
+
+if (existsSync(frontendIndexPath)) {
+  app.use(express.static(frontendDistPath));
+  app.get(/^(?!\/api\/|\/ws\/|\/health\b).*/, (req, res) => {
+    res.sendFile(frontendIndexPath);
+  });
+}
 
 // Socket.io connection
 io.on('connection', (socket) => {
@@ -203,7 +224,7 @@ const startServer = async () => {
   });
 
   server.listen(PORT, () => {
-    console.log(`🚀 SIEM API Gateway running on http://localhost:${PORT}`);
+    console.log(`🚀 SIEM API Gateway running on https://siem-td7e.onrender.com:${PORT}`);
     console.log(`📡 Real-time WebSocket server ready on /ws`);
   });
 };

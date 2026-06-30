@@ -381,17 +381,17 @@ const LogExplorer = () => {
 
       {/* ── Payload Inspector Modal ────────────────────────────── */}
       {selectedPayload && (
-        <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50 p-4">
-          <div className="bg-[#141414] border border-[#2a2a2a] rounded-lg max-w-lg w-full p-6 shadow-2xl">
-            <div className="flex items-center justify-between mb-4 border-b border-[#222] pb-3">
+        <div className="fixed inset-0 bg-gray/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-[#f8f8f8] border border-[#e8e8e8] rounded-lg max-w-lg w-full p-6 shadow-xl">
+            <div className="flex items-center justify-between mb-4 border-b border-[#e0e0e0] pb-3">
               <div className="flex items-center gap-2 text-[#2979ff]">
                 <Terminal size={16} />
-                <span className="font-mono text-sm font-bold text-white">
+                <span className="font-mono text-sm font-bold text-[#1a1a1a]">
                   {LOG_TYPE_ICON[selectedLog?.logType] || '📋'} {selectedLog?.action}
                 </span>
               </div>
               <button onClick={() => { setSelectedPayload(null); setSelectedLog(null); }}
-                className="text-xs text-[#888] hover:text-white font-mono cursor-pointer">
+                className="text-xs text-[#666] hover:text-[#1a1a1a] font-mono cursor-pointer">
                 [CLOSE]
               </button>
             </div>

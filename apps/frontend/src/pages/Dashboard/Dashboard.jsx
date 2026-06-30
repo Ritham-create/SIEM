@@ -117,9 +117,9 @@ const Dashboard = () => {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-white tracking-wide">SOC Command Center</h1>
-          <p className="text-xs text-[#888888]">Real-time security intelligence from live Windows host collectors</p>
+          <p className="text-xs text-[#666666]">Real-time security intelligence from live Windows host collectors</p>
         </div>
-        <div className="flex items-center gap-2 bg-[#1a1a1a] border border-[#2a2a2a] px-3 py-1.5 rounded-lg text-xs font-mono">
+        <div className="flex items-center gap-2 bg-[#f5f5f5] border border-[#e8e8e8] px-3 py-1.5 rounded-lg text-xs font-mono">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute h-full w-full rounded-full bg-[#00e676] opacity-75"></span>
             <span className="relative rounded-full h-2 w-2 bg-[#00e676]"></span>
@@ -207,7 +207,7 @@ const Dashboard = () => {
 
         {/* Severity pie */}
         <div className="card">
-          <h3 className="font-semibold text-xs tracking-wide uppercase text-[#888888] mb-3 font-mono">
+          <h3 className="font-semibold text-xs tracking-wide uppercase text-[#666666] mb-3 font-mono">
             Severity Distribution
           </h3>
           <div className="h-44 flex justify-center items-center">
@@ -271,14 +271,14 @@ const Dashboard = () => {
                   className={`flex justify-between items-center px-2.5 py-2 rounded text-[11px] border transition-colors ${
                     count > 0
                       ? 'bg-[#00e676]/5 border-[#00e676]/15 text-[#00e676]'
-                      : 'bg-[#0f0f0f] border-[#1a1a1a] text-[#444]'
+                      : 'bg-[#f8f8f8] border-[#e8e8e8] text-[#aaa]'
                   }`}
                 >
                   <span className="font-mono truncate">{tactic}</span>
                   <span className={`font-mono text-[10px] px-1.5 py-0.5 rounded flex-shrink-0 ml-2 ${
                     count > 0
                       ? 'bg-[#00e676]/20 text-[#00e676] font-bold'
-                      : 'bg-[#1a1a1a] text-[#555]'
+                      : 'bg-[#f5f5f5] text-[#999]'
                   }`}>
                     {count} {count === 1 ? 'rule' : 'rules'}
                   </span>

@@ -11,12 +11,28 @@
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #e0e0e0;
+  background: linear-gradient(135deg, #fffafc 0%, #fdf2f8 100%);
+  color: #1f2937;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Global theme overrides for the existing dark UI classes */
+body .text-white { color: #1f2937 !important; }
+body .text-\[\#e0e0e0\] { color: #374151 !important; }
+body .bg-\[\#0a0a0a\] { background-color: #fffdfd !important; }
+body .bg-\[\#141414\] { background-color: #ffffff !important; }
+body .bg-\[\#1a1a1a\] { background-color: #fff7fb !important; }
+body .bg-\[\#1e1e1e\] { background-color: #fdf2f8 !important; }
+body .bg-\[\#2a2a2a\] { background-color: #fce7f3 !important; }
+body .bg-\[\#3a3a3a\] { background-color: #fbcfe8 !important; }
+body .bg-\[\#2979ff\] { background-color: #ec4899 !important; }
+body .text-\[\#2979ff\] { color: #ec4899 !important; }
+body .border-\[\#2979ff\] { border-color: #ec4899 !important; }
+body .border-\[\#222\], body .border-\[\#2a2a2a\], body .border-\[\#3a3a3a\] { border-color: #f5d0fe !important; }
+body .border-\[\#e8e8e8\] { border-color: #fbcfe8 !important; }
+body .bg-\[\#e8e8e8\] { background-color: #fdf2f8 !important; }
 
 /* Use JetBrains Mono for all font-mono elements */
 .font-mono {
@@ -25,9 +41,9 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar       { width: 5px; height: 5px; }
-::-webkit-scrollbar-track  { background: #111; }
-::-webkit-scrollbar-thumb  { background: #2a2a2a; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+::-webkit-scrollbar-track  { background: #f5f5f5; }
+::-webkit-scrollbar-thumb  { background: #d0d0d0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #b0b0b0; }
 
 /* ── Keyframe animations ─────────────────────────────────── */
 @keyframes fadeIn {
@@ -58,23 +74,23 @@ body {
 /* ── Shared design tokens ────────────────────────────────── */
 @layer components {
   .card {
-    @apply bg-[#141414] border border-[#222] rounded-xl p-4;
+    @apply bg-[#ffffff] border border-[#f9d5e5] rounded-xl p-4 shadow-sm;
   }
 
   .card-sm {
-    @apply bg-[#141414] border border-[#222] rounded-lg p-3;
+    @apply bg-[#fffdfd] border border-[#f9d5e5] rounded-lg p-3 shadow-sm;
   }
 
   .btn-primary {
-    @apply bg-[#2979ff] hover:bg-[#1c60e0] active:bg-[#1550c8]
+    @apply bg-[#ec4899] hover:bg-[#db2777] active:bg-[#be185d]
            text-white font-semibold py-2 px-4 rounded-lg
            transition-all duration-150 cursor-pointer;
   }
 
   .btn-secondary {
-    @apply bg-[#1e1e1e] hover:bg-[#2a2a2a] active:bg-[#333]
-           text-[#ccc] font-medium py-2 px-4 rounded-lg
-           border border-[#2a2a2a] hover:border-[#3a3a3a]
+    @apply bg-[#fff5f9] hover:bg-[#fce7f3] active:bg-[#fbcfe8]
+           text-[#6b7280] font-medium py-2 px-4 rounded-lg
+           border border-[#f5d0fe] hover:border-[#f9a8d4]
            transition-all duration-150 cursor-pointer;
   }
 
@@ -86,11 +102,11 @@ body {
   }
 
   .input-field {
-    @apply bg-[#0d0d0d] border border-[#2a2a2a] text-[#e0e0e0]
+    @apply bg-[#fffdfd] border border-[#f5d0fe] text-[#374151]
            rounded-lg px-3 py-2
-           focus:outline-none focus:border-[#2979ff] focus:ring-1 focus:ring-[#2979ff]/30
+           focus:outline-none focus:border-[#ec4899] focus:ring-1 focus:ring-[#ec4899]/30
            transition-all duration-150
-           placeholder:text-[#444];
+           placeholder:text-[#9ca3af];
   }
 
   /* Severity badge helpers */

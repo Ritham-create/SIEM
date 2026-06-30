@@ -32,20 +32,20 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
   return (
     <div className={`${
       collapsed ? 'w-16' : 'w-64'
-    } bg-[#1a1a1a] border-r border-[#2a2a2a] transition-all duration-300 flex flex-col`}>
-      <div className="flex items-center justify-between h-16 px-4 border-b border-[#2a2a2a]">
+    } bg-[#fffafc] border-r border-[#f5d0fe] transition-all duration-300 flex flex-col`}>
+      <div className="flex items-center justify-between h-16 px-4 border-b border-[#f5d0fe]">
         {!collapsed && (
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-bold bg-gradient-to-r from-[#2979ff] to-[#00e676] bg-clip-text text-transparent">SIEM Gateway</span>
-            <span className="text-[10px] bg-[#2a2a2a] text-[#888888] px-1.5 py-0.5 rounded font-mono border border-[#3a3a3a]">v1.0</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-[#ec4899] to-[#f472b6] bg-clip-text text-transparent">SIEM Gateway</span>
+            <span className="text-[10px] bg-[#fdf2f8] text-[#be185d] px-1.5 py-0.5 rounded font-mono border border-[#f9a8d4]">v1.0</span>
           </div>
         )}
         {collapsed && (
-          <span className="text-lg font-bold text-[#2979ff] font-mono mx-auto">SG</span>
+          <span className="text-lg font-bold text-[#ec4899] font-mono mx-auto">SG</span>
         )}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="p-1 hover:bg-[#2a2a2a] rounded transition-colors"
+          className="p-1 hover:bg-[#fdf2f8] rounded transition-colors"
         >
           {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
         </button>
@@ -59,8 +59,8 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
             className={({ isActive }) =>
               `flex items-center px-4 py-3 mx-2 rounded transition-colors text-sm ${
                 isActive 
-                  ? 'bg-[#2979ff] text-white font-medium' 
-                  : 'text-[#888888] hover:bg-[#2a2a2a] hover:text-white'
+                  ? 'bg-[#ec4899] text-white font-medium' 
+                  : 'text-[#6b7280] hover:bg-[#fdf2f8] hover:text-[#111827]'
               }`
             }
           >
@@ -70,7 +70,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
         ))}
       </nav>
       
-      <div className="p-4 border-t border-[#2a2a2a] text-center text-xs text-[#555] font-mono">
+      <div className="p-4 border-t border-[#fbcfe8] text-center text-xs text-[#9ca3af] font-mono">
         {!collapsed && <div>Securing corporate assets</div>}
       </div>
     </div>

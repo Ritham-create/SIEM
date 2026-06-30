@@ -7,11 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'siem-dark':           '#0a0a0a',
-        'siem-card':           '#141414',
-        'siem-border':         '#222222',
-        'siem-text':           '#e0e0e0',
-        'siem-text-secondary': '#888888',
+        'siem-dark':           '#ffffff',
+        'siem-card':           '#f8f8f8',
+        'siem-border':         '#e8e8e8',
+        'siem-text':           '#1a1a1a',
+        'siem-text-secondary': '#666666',
         'critical': '#ff1744',
         'high':     '#ff9100',
         'medium':   '#ffea00',

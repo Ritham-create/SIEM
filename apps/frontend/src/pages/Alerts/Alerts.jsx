@@ -344,13 +344,13 @@ const Alerts = () => {
 
       {/* Escalate Case Modal */}
       {showCaseModal && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-          <div className="bg-[#141414] border border-[#2a2a2a] rounded-lg max-w-md w-full p-6 shadow-2xl relative">
-            <div className="flex items-center justify-between mb-4 border-b border-[#222] pb-3">
-              <h3 className="font-mono text-sm font-bold text-white">Escalate Threat Alert</h3>
+        <div className="fixed inset-0 bg-gray/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-[#f8f8f8] border border-[#e8e8e8] rounded-lg max-w-md w-full p-6 shadow-xl relative">
+            <div className="flex items-center justify-between mb-4 border-b border-[#e0e0e0] pb-3">
+              <h3 className="font-mono text-sm font-bold text-[#1a1a1a]">Escalate Threat Alert</h3>
               <button 
                 onClick={() => setShowCaseModal(false)}
-                className="text-xs text-[#888888] hover:text-white font-mono cursor-pointer"
+                className="text-xs text-[#666666] hover:text-[#1a1a1a] font-mono cursor-pointer"
               >
                 [CANCEL]
               </button>

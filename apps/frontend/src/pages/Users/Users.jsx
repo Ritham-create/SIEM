@@ -81,14 +81,14 @@ const Users = () => {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-white tracking-wide">SOC Operator Accounts</h1>
-        <p className="text-xs text-[#888888]">Administrate operator registrations and role based access controls (RBAC)</p>
+        <p className="text-xs text-[#666666]">Administrate operator registrations and role based access controls (RBAC)</p>
       </div>
 
       {/* Users Table */}
       <div className="card overflow-x-auto p-0">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-[#1a1a1a] text-xs font-mono uppercase text-[#888888] border-b border-[#2a2a2a]">
+            <tr className="bg-[#f8f8f8] text-xs font-mono uppercase text-[#666666] border-b border-[#e8e8e8]">
               <th className="py-3 px-4">Operator Username</th>
               <th className="py-3 px-4">Email Address</th>
               <th className="py-3 px-4">Created Date</th>
@@ -99,16 +99,16 @@ const Users = () => {
           <tbody className="divide-y divide-[#222] text-xs">
             {loading ? (
               <tr>
-                <td colSpan={5} className="py-8 text-center text-[#888888]">Loading SOC personnel registers...</td>
+                <td colSpan={5} className="py-8 text-center text-[#666666]">Loading SOC personnel registers...</td>
               </tr>
             ) : usersList.length > 0 ? (
               usersList.map((userObj) => {
                 const isSelf = userObj._id === currentUser.id;
                 return (
-                  <tr key={userObj._id} className="hover:bg-[#1a1a1a]/40 transition-colors">
+                  <tr key={userObj._id} className="hover:bg-[#f5f5f5]/40 transition-colors">
                     <td className="py-3.5 px-4 font-mono font-bold text-white flex items-center space-x-2">
-                      <span className="p-1 bg-[#2a2a2a] rounded">
-                        <UsersIcon size={14} className="text-[#888888]" />
+                      <span className="p-1 bg-[#e8e8e8] rounded">
+                        <UsersIcon size={14} className="text-[#666666]" />
                       </span>
                       <span>{userObj.username}</span>
                       {isSelf && (
@@ -129,8 +129,8 @@ const Users = () => {
                         value={userObj.role}
                         disabled={isSelf}
                         onChange={(e) => handleRoleChange(userObj._id, e.target.value)}
-                        className={`input-field bg-[#1a1a1a] text-xs font-mono py-1 ${
-                          isSelf ? 'opacity-60 cursor-not-allowed bg-[#0a0a0a]' : 'cursor-pointer'
+                        className={`input-field bg-[#f5f5f5] text-xs font-mono py-1 ${
+                          isSelf ? 'opacity-60 cursor-not-allowed bg-[#ececec]' : 'cursor-pointer'
                         }`}
                       >
                         <option value="Viewer">Viewer (Read-Only)</option>
@@ -146,7 +146,7 @@ const Users = () => {
                         className={`p-1.5 rounded transition-all ${
                           isSelf 
                             ? 'text-[#333] cursor-not-allowed' 
-                            : 'hover:bg-[#ff1744]/10 text-[#555] hover:text-[#ff1744] cursor-pointer'
+                            : 'hover:bg-[#ff1744]/10 text-[#999] hover:text-[#ff1744] cursor-pointer'
                         }`}
                         title={isSelf ? 'Self lockout prevented' : 'Revoke user credentials'}
                       >
@@ -158,7 +158,7 @@ const Users = () => {
               })
             ) : (
               <tr>
-                <td colSpan={5} className="py-8 text-center text-[#888888]">No registered operators found</td>
+                <td colSpan={5} className="py-8 text-center text-[#666666]">No registered operators found</td>
               </tr>
             )}
           </tbody>

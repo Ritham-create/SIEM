@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
-  const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/siem';
+  const mongoUri = process.env.MONGO_URI || 'mongodb+srv://ritham4ritham_db_user:<imoogi..7F$>@cluster0.v4e1yhq.mongodb.net/';
   
   try {
     console.log(`⏳ Connecting to MongoDB at ${mongoUri}...`);

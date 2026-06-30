@@ -20,10 +20,10 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+      <div className="min-h-screen bg-[#ffffff] flex items-center justify-center">
         <div className="flex flex-col items-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#2979ff]"></div>
-          <span className="mt-4 text-[#888888] font-medium text-sm">Authenticating Secure Gateway...</span>
+          <span className="mt-4 text-[#666666] font-medium text-sm">Authenticating Secure Gateway...</span>
         </div>
       </div>
     );
