@@ -1,13 +1,12 @@
 import axios from 'axios';
 
+const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'https://siem-backend-4io0.onrender.com').replace(/\/$/, '');
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL
-    ? `${import.meta.env.VITE_API_BASE_URL.replace(/\/$/, '')}/api/v1`
-    : '/api/v1',
+  baseURL: `${apiBaseUrl}/api/v1`,
   headers: {
     'Content-Type': 'application/json'
-  },
-  withCredentials: true
+  }
 });
 
 // Add request interceptor to append JWT token
