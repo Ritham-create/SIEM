@@ -33,20 +33,20 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
   return (
     <div className={`${
       collapsed ? 'w-16' : 'w-64'
-    } bg-[#fffafc] border-r border-[#f5d0fe] transition-all duration-300 flex flex-col`}>
-      <div className="flex items-center justify-between h-16 px-4 border-b border-[#f5d0fe]">
+    } bg-[#0f172a] border-r border-[#111827] transition-all duration-300 flex flex-col`}>
+      <div className="flex items-center justify-between h-16 px-4 border-b border-[#111827]">
         {!collapsed && (
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-bold bg-gradient-to-r from-[#ec4899] to-[#f472b6] bg-clip-text text-transparent">SIEM Gateway</span>
-            <span className="text-[10px] bg-[#fdf2f8] text-[#be185d] px-1.5 py-0.5 rounded font-mono border border-[#f9a8d4]">v1.0</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-[#0ea5e9] to-[#7dd3fc] bg-clip-text text-transparent">SIEM Gateway</span>
+            <span className="text-[10px] bg-[#07111f] text-[#38bdf8] px-1.5 py-0.5 rounded font-mono border border-[#0ea5e9]/30">v1.0</span>
           </div>
         )}
         {collapsed && (
-          <span className="text-lg font-bold text-[#ec4899] font-mono mx-auto">SG</span>
+          <span className="text-lg font-bold text-[#38bdf8] font-mono mx-auto">SG</span>
         )}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="p-1 hover:bg-[#fdf2f8] rounded transition-colors"
+          className="p-1 hover:bg-[#111827] rounded transition-colors"
         >
           {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
         </button>
@@ -60,18 +60,18 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
             className={({ isActive }) =>
               `flex items-center px-4 py-3 mx-2 rounded transition-colors text-sm ${
                 isActive 
-                  ? 'bg-[#ec4899] text-white font-medium' 
-                  : 'text-[#6b7280] hover:bg-[#fdf2f8] hover:text-[#111827]'
+                  ? 'bg-[#0ea5e9] text-[#020617] font-medium' 
+                  : 'text-[#94a3b8] hover:bg-[#111827] hover:text-[#e2e8f0]'
               }`
             }
           >
-            <item.icon size={18} className="flex-shrink-0" />
+            <item.icon size={18} className="flex-shrink-0 text-[#94a3b8]" />
             {!collapsed && <span className="ml-3 truncate">{item.label}</span>}
           </NavLink>
         ))}
       </nav>
       
-      <div className="p-4 border-t border-[#fbcfe8] text-center text-xs text-[#9ca3af] font-mono">
+      <div className="p-4 border-t border-[#111827] text-center text-xs text-[#94a3b8] font-mono">
         {!collapsed && <div>Securing corporate assets</div>}
       </div>
     </div>

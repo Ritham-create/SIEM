@@ -7,10 +7,8 @@
     "dev": "concurrently \"npm run dev --prefix apps/api-gateway\" \"npm run dev --prefix apps/frontend\"",
     "postinstall": "npm install --prefix apps/api-gateway && npm install --prefix apps/frontend",
     "build": "npm run build --prefix apps/frontend",
-    "start": "node apps/api-gateway/src/server.js",
-    "install-all": "npm install && npm install --prefix apps/api-gateway && npm install --prefix apps/frontend",
-    "build": "npm run build --prefix apps/frontend",
     "start": "npm start --prefix apps/api-gateway",
+    "install-all": "npm install && npm install --prefix apps/api-gateway && npm install --prefix apps/frontend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
