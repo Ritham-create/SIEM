@@ -9,7 +9,8 @@ import {
   Shield, 
   Users,
   ChevronLeft,
-  ChevronRight 
+  ChevronRight,
+   Globe 
 } from 'lucide-react';
 
 const Sidebar = ({ collapsed, setCollapsed }) => {
@@ -22,7 +23,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
     { path: '/search', icon: Search, label: 'Search Logs' },
     { path: '/cases', icon: FileText, label: 'Cases' },
     { path: '/rules', icon: Shield, label: 'Correlation Rules' },
-    { path: '/intel', icon: AlertTriangle, label: 'Threat Intelligence' }
+    { path: '/threat-intel', icon: Globe, label: 'Threat Intelligence' },
   ];
 
   // Append Users management to sidebar for Admin only

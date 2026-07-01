@@ -14,6 +14,7 @@ import Cases from './pages/Cases/Cases';
 import Rules from './pages/Rules/Rules';
 import Intel from './pages/Intel/Intel';
 import Users from './pages/Users/Users';
+import ThreatIntel from './pages/ThreatIntel/ThreatIntel'; // 
 
 // Shield Protected Route component
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -100,6 +101,15 @@ function App() {
           <ProtectedRoute allowedRoles={['Admin']}>
             <Layout>
               <Users />
+            </Layout>
+          </ProtectedRoute>
+        } />
+
+        {/* ✅ NEW: Threat Intelligence Route */}
+        <Route path="/threat-intel" element={
+          <ProtectedRoute>
+            <Layout>
+              <ThreatIntel />
             </Layout>
           </ProtectedRoute>
         } />
